@@ -1,0 +1,79 @@
+server:
+  port: 8071
+
+spring:
+  profiles:
+    active: qa
+
+---
+
+spring:
+  application:
+    name: spring-boot-tutorial
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring-boot
+    username: root
+    password: Harsha@1997!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  banner:
+    location: banner.txt
+
+welcome:
+  message: Hello, Welcome to spring boot tutorial...!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+
+---
+
+spring:
+  application:
+    name: spring-boot-tutorial
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring-boot
+    username: root
+    password: Harsha@1997!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  banner:
+    location: banner.txt
+
+welcome:
+  message: Hello, Welcome to spring boot tutorial...!
+
+---
+
+spring:
+  application:
+    name: spring-boot-tutorial
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring-boot
+    username: root
+    password: Harsha@1997!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  banner:
+    location: banner.txt
+
+welcome:
+  message: Hello, Welcome to spring boot tutorial...!
